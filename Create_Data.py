@@ -80,6 +80,6 @@ def main(folder, src):
 
 
 if __name__ == "__main__":
-    folder = 'HuuDuc'
+    folder = 'Nguyet'
     src = 0
     main(folder, src)

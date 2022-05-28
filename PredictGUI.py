@@ -70,5 +70,5 @@ class Main(Frame):
 
 root = Tk()
 Main(root)
-root.geometry("600x630")
+root.geometry("600x700")
 root.mainloop()

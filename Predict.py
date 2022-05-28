@@ -11,7 +11,8 @@ import cv2
 
 model = Model()
 
-label = {0: "Phuc", 1: "Nguyen", 2: "Nhan", 3: "Phat", 4: "Phuong", 5: "Quang"}
+label = np.loadtxt("./label.txt", dtype=str, comments="#",
+                   delimiter=" ", unpack=False)
 
 stats = ([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 size = 224
@@ -54,8 +55,6 @@ def Predict(image):
         x2, y2 = x1 + width, y1 + height
 
         image = Image.fromarray(pixels[y1:y2, x1:x2])
-        image.show()
-
         image = transformer(image).float()
         image = image.unsqueeze_(0)
         outs = model(image)
