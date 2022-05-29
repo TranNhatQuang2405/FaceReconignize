@@ -64,8 +64,12 @@ def Predict(image):
         print(label[index])
         imageResult = cv2.rectangle(
             imageResult, (x1, y1), (x2, y2), (255, 0, 0), thickness=2)
-        imageResult = cv2.putText(imageResult, label[index], (x1, y1 - 5),
-                                  cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0), 1)
+        if y1 - 5 > 5:
+            imageResult = cv2.putText(imageResult, label[index], (x1, y1 - 5),
+                                      cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 1)
+        else:
+            imageResult = cv2.putText(imageResult, label[index], (x1, y1 + 15),
+                                      cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 1)
     return Image.fromarray(imageResult)
 
 

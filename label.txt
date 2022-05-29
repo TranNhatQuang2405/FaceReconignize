@@ -14,6 +14,8 @@ Phat
 Phuong
 Quang
 QuangDuong
+QuangHai
+TanLuan
 Truong
 TuongDuy
 VanOai

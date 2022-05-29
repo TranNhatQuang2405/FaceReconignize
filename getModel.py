@@ -26,7 +26,7 @@ class FaceRecog(nn.Module):
 
 
 def Model():
-    model = FaceRecog(num_classes=19)
-    model.load_state_dict(torch.load("./model/demo.pth"))
+    model = FaceRecog(num_classes=21)
+    model.load_state_dict(torch.load("./model/FaceReg.pth"))
     model.eval()
     return model
